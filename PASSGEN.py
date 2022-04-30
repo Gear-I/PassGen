@@ -7,7 +7,7 @@ import string, random
 #import the neccesary modules: 
 
 #input the length of password
-length = int(input('\nHow Many Character: '))
+length = int(input('\nHow Many Characters: '))
 
 #define data
 lower = string.ascii_lowercase
