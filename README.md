@@ -9,3 +9,6 @@ Download: [here](https://github.com/Gear-I/PassGen/releases/download/v1.0/PassGe
 
 
 Linux Version Coming Soon!
+
+
+Terminal Console Version Comming Soon!
