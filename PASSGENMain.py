@@ -2,7 +2,6 @@ import random
 from tkinter import *
 from tkinter import messagebox
 import pyperclip
-import urllib.request
 
 # Define window
 def disable_event():
@@ -10,7 +9,6 @@ def disable_event():
 app = Tk()
 app.geometry("650x200")
 app.title("Welcome to Password Generator Version 1.0, Licensed under GPLv3 - Dielle De Noon")
-urllib.request.urlretrieve('https://raw.githubusercontent.com/Gear-I/PassGen/main/PassGen4.ico', "PassGen4.ico")
 app.iconbitmap('PassGen4.ico')
 app.protocol("WM_DELETE_WINDOW", disable_event)
 # Items used to generate password
@@ -177,6 +175,7 @@ Exit= Button(app,text= "Exit", command=close_app)
 Exit.grid(row=6, column=1)
 
 app.mainloop()
+
 
 
 
