@@ -7,8 +7,3 @@ Thank you for downloading the PassGen software
 Windows Version:
 Download: [here](https://github.com/Gear-I/PassGen/releases/download/v1.0/PassGen.Setup.exe)
 
-
-Linux Version Coming Soon!
-
-
-Terminal Console Version Comming Soon!
