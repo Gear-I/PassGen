@@ -5,7 +5,7 @@ This PassGen will help people keep their accounts secured and help reduce passwo
 Thank you for downloading the PassGen software
 
 Windows Version:
-Download: [here](https://github.com/Gear-I/PassGen/releases/download/v1.0/PassGen.Setup.exe)
+Download: [here]https://github.com/Gear-I/PassGen/releases/download/v1.0/PassGen.Setup.exe
 
 
 Linux Version Coming Soon!
