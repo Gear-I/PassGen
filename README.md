@@ -5,4 +5,4 @@ This PassGen will help people keep their accounts secured and help reduce passwo
 Thank you for downloading the PassGen software
 
 
-
+![](https://github.com/Gear-I/PassGen/blob/main/PassGen.gif)
