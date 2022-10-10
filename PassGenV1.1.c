@@ -1,6 +1,6 @@
+#include <stdio.h>
 // Author as Dielle De Noon
 // v1.1
-#include <stdio.h>
 // PassGen Header
 printif(" _____                         _____                ")
 printif("|  __ \                       / ____|               ")
