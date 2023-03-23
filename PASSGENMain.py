@@ -157,11 +157,11 @@ def reset():
     Checkbox_5.deselect()
     Checkbox_6.deselect()
     length.delete(0, END)
-
+    messagebox.delete(0, END)
 
 Submit = Button(app, text="Generate", command=generate_password) # Generating button
 Submit.grid(row=2, column=1)
-Reset = Button(app, text="Rest", command=reset) # Reseting PassGen Button
+Reset = Button(app, text="Reset", command=reset) # Reseting PassGen Button
 Reset.grid(row=4, column=1)
 # Copying password to clipboard
 def copytoclipboard():
