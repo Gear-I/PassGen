@@ -137,14 +137,15 @@ Space_1.grid(row=1, column=0)
 PasswordText = Entry(app, width=25) # Text box
 PasswordText.grid(row=1, column=1)
 
+
 # Generating password function
 def generate_password():
     PasswordText.delete(0, END) # Clear text box before writing a new password
     for x in range(int(amount.get())):
         password = "".join (random.sample(everything, int(length.get())))
         PasswordText.insert(0, password) # Past password into text box
-    label = Label(app, text="Password generated.", fg="green") # Show info
-    label.grid(row=3, column=1)
+    Generated= Label(app, text="Password generated.", fg="green") # Show info
+    Generated.grid(row=3, column=1)
 if not upper.get() or lower.get() or nums.get() or spec.get() or sym.get() or uni.get():
     messagebox.showwarning(title="Warning", message="Enter Number of characters (Max Characters is 50) in the length box select three or more options to generate password")
   
@@ -157,7 +158,10 @@ def reset():
     Checkbox_5.deselect()
     Checkbox_6.deselect()
     length.delete(0, END)
-    messagebox.delete(0, END)
+    Generated.destroy(0, END)
+
+
+
 
 Submit = Button(app, text="Generate", command=generate_password) # Generating button
 Submit.grid(row=2, column=1)
