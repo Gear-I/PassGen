@@ -144,11 +144,12 @@ def generate_password():
     for x in range(int(amount.get())):
         password = "".join (random.sample(everything, int(length.get())))
         PasswordText.insert(0, password) # Past password into text box
-    Generated= Label(app, text="Password generated.", fg="green") # Show info
+    Generated= Label(app, text="Password Generated.", fg="green") # Show info
     Generated.grid(row=3, column=1)
+    Generated.after(10000, Generated.destroy)
 if not upper.get() or lower.get() or nums.get() or spec.get() or sym.get() or uni.get():
     messagebox.showwarning(title="Warning", message="Enter Number of characters (Max Characters is 50) in the length box select three or more options to generate password")
-  
+
 def reset():
     PasswordText.delete(0, END)
     Checkbox_1.deselect()
@@ -158,19 +159,25 @@ def reset():
     Checkbox_5.deselect()
     Checkbox_6.deselect()
     length.delete(0, END)
-    Generated.destroy(0, END)
-
-
+    
+    
 
 
 Submit = Button(app, text="Generate", command=generate_password) # Generating button
 Submit.grid(row=2, column=1)
-Reset = Button(app, text="Reset", command=reset) # Reseting PassGen Button
+Reset = Button(app, text="Reset", command=reset)  # Reseting PassGen Button
 Reset.grid(row=4, column=1)
 # Copying password to clipboard
 def copytoclipboard():
     pyperclip.copy(PasswordText.get())
     messagebox.showinfo(title="Info", message="Password copied to clipboard.")
+    PasswordText.delete(0, END)
+
+# Saving Password 
+def save_password():
+    if Submit.get() == True:
+        messagebox.showinfo(title="Save Password Confirmation", message= "Would you like to save this generated password to the password manager database? Please Choose 'Yes' or 'No'")
+
 def close_app():
     app.destroy()
 Copy = Button(app, text="Copy", command=copytoclipboard) # Copying button
