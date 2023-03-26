@@ -163,7 +163,7 @@ def reset():
     
 
 
-Submit = Button(app, text="Generate", command=generate_password) # Generating button
+Submit = Button(app, text="Generate", command=lambda:[generate_password(), save_password()] ) # Generating button
 Submit.grid(row=2, column=1)
 Reset = Button(app, text="Reset", command=reset)  # Reseting PassGen Button
 Reset.grid(row=4, column=1)
@@ -174,9 +174,34 @@ def copytoclipboard():
     PasswordText.delete(0, END)
 
 # Saving Password 
+YES = BooleanVar()
+NO = BooleanVar()
 def save_password():
-    if Submit.get() == True:
-        messagebox.showinfo(title="Save Password Confirmation", message= "Would you like to save this generated password to the password manager database? Please Choose 'Yes' or 'No'")
+    Win = Toplevel
+    Win = Tk()
+    Win.geometry("650x200")
+    Win.title("Save Password Confirmation")
+    Win.iconbitmap('PassGen4.ico')
+    SP=Label(Win, text="Would you like to save the generated password? Please check 'Yes' or 'No' ")
+    SP.pack(pady=10)
+    CheckboxLabelYes = Checkbutton(Win, text="Yes", variable=YES, onvalue= True, offvalue= False, command=Check_yes)
+    CheckboxLabelYes.pack(pady=15)
+    CheckboxLabelNo = Checkbutton(Win, text="No", variable=NO, onvalue= True, offvalue= False, command=Check_no)
+    CheckboxLabelNo.pack(pady=20)
+    
+def Check_yes():
+    global YES
+    if YES.get() == True:
+        print("This function is in working progress")
+
+def Check_no():
+    global NO
+    if NO.get() == True:
+        print("Thanks for your response")
+        exit()
+        
+
+
 
 def close_app():
     app.destroy()
