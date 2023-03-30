@@ -173,9 +173,17 @@ def copytoclipboard():
     messagebox.showinfo(title="Info", message="Password copied to clipboard.")
     PasswordText.delete(0, END)
 
-# Saving Password 
-YES = BooleanVar()
-NO = BooleanVar()
+# Saving Password
+
+def Check():
+    if YES == True:
+        messagebox.showwarning(title= "Warning", message= "This function is in progress")
+        exit()
+    if NO == True:
+        messagebox.showinfo(title= "Confirmation Message", message= "Thank you for your response")
+        exit()
+
+
 def save_password():
     Win = Toplevel
     Win = Tk()
@@ -184,22 +192,11 @@ def save_password():
     Win.iconbitmap('PassGen4.ico')
     SP=Label(Win, text="Would you like to save the generated password? Please check 'Yes' or 'No' ")
     SP.pack(pady=10)
-    CheckboxLabelYes = Checkbutton(Win, text="Yes", variable=YES, onvalue= True, offvalue= False, command=Check_yes)
-    CheckboxLabelYes.pack(pady=15)
-    CheckboxLabelNo = Checkbutton(Win, text="No", variable=NO, onvalue= True, offvalue= False, command=Check_no)
-    CheckboxLabelNo.pack(pady=20)
+    YES= Button(Win, text="Yes", variable= YES, onvalue= True, offvalue= False, command=Check)
+    YES.pack(pady=15)
+    NO = Button(Win, text="No", variable= NO, onvalue=True, offvalue=False, command=Check)
+    NO.pack(pady=20)
     
-def Check_yes():
-    global YES
-    if YES.get() == True:
-        print("This function is in working progress")
-
-def Check_no():
-    global NO
-    if NO.get() == True:
-        print("Thanks for your response")
-        exit()
-        
 
 
 
